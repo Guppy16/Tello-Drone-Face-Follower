@@ -4,7 +4,7 @@
 
 1. Face recognition
     - [x] In an image
-    - [ ] In a video
+    - [x] In a video stream from webcam
     - [ ] In a Tello video stream
 
 2. Drone commands for basic flight control
@@ -17,6 +17,9 @@
     - [ ] Move closer to subject
     - [ ] PID controller for stable control
 
+## ToDo:
+- [ ] Requirement.txt (remove unnecessary dependencies)
+
 ---
 ## Useful stuff from other sources
 
@@ -26,3 +29,10 @@
     i. operating the drone
     ii. recording video to mp4
     iii. displaying video stream
+
+## NOTEs:
+- Personal rating of the different face detection cascades tested in video stream:
+    - haarcascade_frontalface_alt: 
+    - haarcascade_frontalface_alt_tree: Pretty good. Detects my neck as a face
+    - haarcascade_frontalface_alt2: Pretty good. Detects my neck as a face
+    - haarcascade_frontalface_default: Doesn't work that well
