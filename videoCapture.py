@@ -4,8 +4,9 @@ from cv2 import cv2 as cv
 
 # %%
 
-def getCaptureStream(loc=0, frame_width: int=640, frame_height: int=480):
-	"""Method to initialise input stream of video"""
+def get_capture_stream(loc=0, frame_width: int=640, frame_height: int=480):
+	"""Method to initialise input stream of video
+	(from a camera connected to the device such as a webcam)"""
 	cap = cv.VideoCapture(loc)
 	cap.set(3, frame_width)    # Max val = 1280
 	cap.set(4, frame_height)     # Max val = 720
@@ -18,20 +19,20 @@ def getCaptureStream(loc=0, frame_width: int=640, frame_height: int=480):
 	return cap, frame_width, frame_height
 
 
-def getOutputStream(loc: str="output.avi", enc: str='DIVX', frame_width: int=640, frame_height: int=480, fps=20):
+def get_output_stream(loc: str="output.avi", enc: str='DIVX', frame_width: int=640, frame_height: int=480, fps=20):
 	"""Method to initialise output stream of video"""
 	fourcc = cv.VideoWriter_fourcc(*enc)
 	out = cv.VideoWriter(loc, fourcc, fps, (frame_width, frame_height))
 
 	return out
 
-def releaseStreams(cap, out):
+def release_streams(cap, out):
 	cap.release()
 	out.release()
 
 if __name__ == "__main__":
-	cap, frame_width, frame_height = getCaptureStream()
-	out = getOutputStream()
+	cap, frame_width, frame_height = get_capture_stream()
+	out = get_output_stream()
 
 	while cap.isOpened():
 		ret, frame = cap.read()
@@ -45,5 +46,5 @@ if __name__ == "__main__":
 			break
 			
 	cv.destroyAllWindows()
-	releaseStreams(cap, out)
+	release_streams(cap, out)
 

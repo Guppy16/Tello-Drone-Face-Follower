@@ -1,7 +1,7 @@
 # %%
 from cv2 import cv2 as cv
-from faceDetect import face_detect, get_face_cascade
-from videoCapture import getCaptureStream, getOutputStream, releaseStreams
+import facedetect
+from videocapture import get_capture_stream, get_output_stream, release_streams
 
 # main function to get video feed from webcam and detect a face
 
@@ -13,16 +13,17 @@ def main_loop(cap, out, face_cascade):
 
 		out.write(frame)
 
-		frame = face_detect(frame, face_cascade=face_cascade)
+		faces = facedetect.face_cascade_detect(frame, face_cascade)
+		frame = facedetect.draw_face_box(frame, faces)
 		cv.imshow('frame', frame)
 		if cv.waitKey(1) & 0xFF == ord('q'):
 			break
 
 if __name__ == "__main__":
-	face_cascade = get_face_cascade()
+	face_cascade = facedetect.get_face_cascade()
 
-	cap, frame_width, frame_height = getCaptureStream()
-	out = getOutputStream()
+	cap, frame_width, frame_height = get_capture_stream()
+	out = get_output_stream()
 
 	try:
 		main_loop(cap, out, face_cascade)
@@ -32,4 +33,4 @@ if __name__ == "__main__":
 	finally:
 		# Release windows and streams
 		cv.destroyAllWindows()
-		releaseStreams(cap, out)
+		release_streams(cap, out)
