@@ -5,14 +5,16 @@
 1. Face recognition
     - [x] In an image
     - [x] In a video stream from webcam
-    - [ ] In a Tello video stream
+    - [x] In a Tello video stream
+    - [ ] Only recognise face of "target"
 
 2. Drone commands for basic flight control
-    - [ ] Use some Tello Python API
+    - [x] Get to grips with [djitellopy](https://github.com/damiafuentes/DJITelloPy)
     - [ ] Fly up and land down
     - [ ] Basic Maneuvers: fly up,down,left,right. rotate. Land
 
 3. Face Follower
+    - [ ] Average faces wrt position (maybe give more weighting to bigger faces?) AND wrt time (using exponential avg?)
     - [ ] Proportional control: very slowly translate up / down into frame and/or rotate into frame
     - [ ] Move closer to subject
     - [ ] PID controller for stable control
