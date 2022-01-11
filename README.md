@@ -26,11 +26,19 @@
 ## Useful stuff from other sources
 
 - [DJI TelloPy](https://github.com/damiafuentes/DJITelloPy) Python API for Tello
+- [hanyazou's implementation of TelloPy](https://github.com/hanyazou/TelloPy)
 
 - [youngsol's implementation](https://github.com/youngsoul/tello-sandbox) required 3 threads
     i. operating the drone
     ii. recording video to mp4
     iii. displaying video stream
+    
+- [Selfie Air Stick](https://www.youtube.com/watch?v=RHRQoaqQIgo)
+- [PyImageSearch Ball Tracking](https://github.com/Ubotica/telloCV/)
+- [DJI Tello Drone Manual](https://dl-cdn.ryzerobotics.com/downloads/Tello/20180212/Tello+User+Manual+v1.0_EN_2.12.pdf)
+- 
+
+
 
 ## NOTEs:
 - Personal rating of the different face detection cascades tested in video stream:
